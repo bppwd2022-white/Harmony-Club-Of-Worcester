@@ -1,0 +1,10 @@
+<h1>Sections#index</h1>
+<ul>
+  <% @sections.each do |section| %>
+    <li>
+      <a href="/sections/<%= section.id %>">
+        <%= section.title %>
+      </a>
+    </li>
+  <% end %>
+</ul>
