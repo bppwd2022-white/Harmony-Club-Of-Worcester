@@ -1,43 +1,48 @@
 require "test_helper"
 
 class SectionsControllerTest < ActionDispatch::IntegrationTest
-  test "should get new" do
-    get sections_new_url
-    assert_response :success
-  end
-
-  test "should get create" do
-    get sections_create_url
-    assert_response :success
+  setup do
+    @section = sections(:one)
   end
 
   test "should get index" do
-    get sections_index_url
+    get sections_url
     assert_response :success
   end
 
-  test "should get show" do
-    get sections_show_url
+  test "should get new" do
+    get new_section_url
+    assert_response :success
+  end
+
+  test "should create section" do
+    assert_difference('Section.count') do
+      post sections_url, params: { section: { location: @section.location, position: @section.position, title: @section.title, visible: @section.visible } }
+    end
+
+    assert_redirected_to section_url(Section.last)
+  end
+
+  test "should show section" do
+    get section_url(@section)
     assert_response :success
   end
 
   test "should get edit" do
-    get sections_edit_url
+    get edit_section_url(@section)
     assert_response :success
   end
 
-  test "should get update" do
-    get sections_update_url
-    assert_response :success
+  test "should update section" do
+    patch section_url(@section), params: { section: { location: @section.location, position: @section.position, title: @section.title, visible: @section.visible } }
+    assert_redirected_to section_url(@section)
   end
 
-  test "should get delete" do
-    get sections_delete_url
-    assert_response :success
-  end
+  test "should destroy section" do
+    assert_difference('Section.count', -1) do
+      delete section_url(@section)
+    end
 
-  test "should get destroy" do
-    get sections_destroy_url
-    assert_response :success
+    assert_redirected_to sections_url
   end
 end

@@ -1,2 +1,24 @@
-<h1><%= @section.title %></h1>
-<p><%= @section.body %></p>
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Location:</strong>
+  <%= @section.location %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @section.title %>
+</p>
+
+<p>
+  <strong>Visible:</strong>
+  <%= @section.visible %>
+</p>
+
+<p>
+  <strong>Position:</strong>
+  <%= @section.position %>
+</p>
+
+<%= link_to 'Edit', edit_section_path(@section) %> |
+<%= link_to 'Back', sections_path %>

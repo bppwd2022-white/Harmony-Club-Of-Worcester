@@ -1,63 +1,39 @@
-<h1>Pages#show</h1>
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavDropdown">
-      <ul class="navbar-nav">
+<p id="notice"><%= notice %></p>
 
+<p>
+  <strong>Title:</strong>
+  <%= @page.title %>
+</p>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            About Us
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Our History</a></li>
-            <li><a class="dropdown-item" href="#">Club Officers</a></li>
-          </ul>
-        </li>
+<p>
+  <strong>Section:</strong>
+  <%= @page.section_id %>
+</p>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Events
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Upcoming Events</a></li>
-            <li><a class="dropdown-item" href="#">Annual Golf Tournaments</a></li>
-            <li><a class="dropdown-item" href="#">Photo Gallary</a></li>
-            <li><a class="dropdown-item" href="#">Dining Out</a></li>
-          </ul>
-        </li>
+<p>
+  <strong>Page type:</strong>
+  <%= @page.page_type %>
+</p>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            For Members
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Membership Info</a></li>
-            <li><a class="dropdown-item" href="#">Calender</a></li>
-            <li><a class="dropdown-item" href="#">Newsletters</a></li>
-            <li><a class="dropdown-item" href="#">Forms</a></li>
-            <li><a class="dropdown-item" href="#">Dues</a></li>
-            <li><a class="dropdown-item" href="#">Member's Contact Information</a></li>
-          </ul>
-        </li>
+<p>
+  <strong>Permalink:</strong>
+  <%= @page.permalink %>
+</p>
 
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            More
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-            <li><a class="dropdown-item" href="#">Supporting Our Community</a></li>
-            <li><a class="dropdown-item" href="#">Our Sponsers</a></li>
-            <li><a class="dropdown-item" href="#">Contact Us</a></li>
-          </ul>
-        </li>
+<p>
+  <strong>Visible:</strong>
+  <%= @page.visible %>
+</p>
 
-      </ul>
-    </div>
-  </div>
-</nav>
-<p>Find me in app/views/pages/show.html.erb</p>
+<p>
+  <strong>Position:</strong>
+  <%= @page.position %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @page.content %>
+</p>
+
+<%= link_to 'Edit', edit_page_path(@page) %> |
+<%= link_to 'Back', pages_path %>

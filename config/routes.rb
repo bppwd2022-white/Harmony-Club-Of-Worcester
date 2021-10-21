@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  get 'site/home'
+  resources :pages
+  resources :sections
+  devise_for :users
   get 'sections/new'
   get 'sections/create'
   get 'sections/index'
@@ -9,9 +13,7 @@ Rails.application.routes.draw do
   get 'sections/destroy'
   get 'pages/show'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'sections#index'
-
-  resources :sections
+  root 'site#home'
 
   get "/sections", to: "articles#index"
   get "/sections/:id", to: "articles#show"
