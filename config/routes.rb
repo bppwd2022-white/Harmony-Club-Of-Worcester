@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :sponsors
+  resources :photos
+  resources :albums
+  resources :events
   get 'site/home'
   resources :pages
   resources :sections

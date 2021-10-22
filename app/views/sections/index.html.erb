@@ -1,32 +1,34 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Sections</h1>
+<h1 class = "text-center">Sections</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Location</th>
-      <th>Title</th>
-      <th>Visible</th>
-      <th>Position</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
 
-  <tbody>
-    <% @sections.each do |section| %>
+  <table class="table table-dark">
+    <thead>
       <tr>
-        <td><%= section.location %></td>
-        <td><%= section.title %></td>
-        <td><%= section.visible %></td>
-        <td><%= section.position %></td>
-        <td><%= link_to 'Show', section %></td>
-        <td><%= link_to 'Edit', edit_section_path(section) %></td>
-        <td><%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th scope="col">ID</th>
+        <th scope="col">Location</th>
+        <th scope="col">Title</th>
+        <th scope="col">Visible</th>
+        <th scope="col">Position</th>
+        <th scope="col">Functions</th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
+    <tbody>
+      <% @sections.each do |section| %>
+        <tr>
+          <th scope="row">1</th>
+          <td><%= section.location %></td>
+          <td><%= section.title %></td>
+          <td><%= section.visible %></td>
+          <td><%= section.position %></td>
+          <td><%= link_to 'Show', section, class: "btn btn-primary" %> |
+          <%= link_to 'Edit', edit_section_path(section), class: "btn btn-warning" %> |
+          <%= link_to 'Destroy', section, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 
 <br>
 
