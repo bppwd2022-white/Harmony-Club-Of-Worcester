@@ -17,7 +17,7 @@
     <tbody>
       <% @sections.each do |section| %>
         <tr>
-          <th scope="row">1</th>
+          <th scope="row"><%= section.id %></th>
           <td><%= section.location %></td>
           <td><%= section.title %></td>
           <td><%= section.visible %></td>

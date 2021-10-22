@@ -22,6 +22,9 @@ class PagesController < ApplicationController
 
   # POST /pages or /pages.json
   def create
+    puts ""
+    puts params
+    puts ""
     @page = Page.new(page_params)
 
     respond_to do |format|
