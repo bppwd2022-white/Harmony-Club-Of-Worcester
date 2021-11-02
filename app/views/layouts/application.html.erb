@@ -21,21 +21,26 @@
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
-
           <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" <%= link_to 'Home', root_path %></a>
+            </li>
+            <% @sections.each do |section| %>
             <li class="nav-item dropdown">
-              <% @sections.each do |section| %>
               <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"><%= section.title %></a>
               <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                <li><a class="dropdown-item" href="#"><%= section.title %></a></li>
+                <% section.pages.each do |page| %>
+                <li><a class="dropdown-item" href="#"><%= page.title %></a></li>
+                <% end %>
               </ul>
-              <% end %>
             </li>
+            <% end %>
           </ul>
-
         </div>
       </div>
     </nav>
+
+
   </head>
 
   <body>

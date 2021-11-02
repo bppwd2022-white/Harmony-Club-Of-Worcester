@@ -1,0 +1,27 @@
+<%= form_with(model: web_event_listing) do |form| %>
+  <% if web_event_listing.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(web_event_listing.errors.count, "error") %> prohibited this web_event_listing from being saved:</h2>
+
+      <ul>
+        <% web_event_listing.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :title %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div class="field">
+    <%= form.label :location_id %>
+    <%= form.number_field :location_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

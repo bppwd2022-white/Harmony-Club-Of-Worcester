@@ -1,4 +1,14 @@
 Rails.application.routes.draw do
+
+  resources :announcements
+
+  namespace :web do
+    namespace :event do
+      resources :listings
+      resources :locations
+    end
+  end
+
   resources :sponsors
   resources :photos
   resources :albums
@@ -7,16 +17,8 @@ Rails.application.routes.draw do
   resources :pages
   resources :sections
   devise_for :users
-  get 'sections/new'
-  get 'sections/create'
-  get 'sections/index'
-  get 'sections/show'
-  get 'sections/edit'
-  get 'sections/update'
-  get 'sections/delete'
-  get 'sections/destroy'
-  get 'pages/show'
-  # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
+
+  # Root to Home
   root 'site#home'
 
   get "/sections", to: "articles#index"
